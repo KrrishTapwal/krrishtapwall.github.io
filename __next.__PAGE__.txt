@@ -1,9 +1,0 @@
-1:"$Sreact.fragment"
-2:I[47257,["/krrishtapwall.github.io/_next/static/chunks/0dbhjjzl8qfwv.js"],"ClientPageRoot"]
-3:I[52683,["/krrishtapwall.github.io/_next/static/chunks/0dbhjjzl8qfwv.js","/krrishtapwall.github.io/_next/static/chunks/0o0axo5o_38n9.js","/krrishtapwall.github.io/_next/static/chunks/13en5u.jvt75j.js"],"default"]
-6:I[97367,["/krrishtapwall.github.io/_next/static/chunks/0dbhjjzl8qfwv.js"],"OutletBoundary"]
-7:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/krrishtapwall.github.io/_next/static/chunks/0o0axo5o_38n9.js","async":true}],["$","script","script-1",{"src":"/krrishtapwall.github.io/_next/static/chunks/13en5u.jvt75j.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"RgmFj_98FOLQW1YlAqL2N"}
-4:{}
-5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
-8:null
