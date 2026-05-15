@@ -189,6 +189,134 @@ body { font-family: 'Poppins', sans-serif !important; }
 .box:hover { border-color: rgba(255,189,57,0.3) !important; }
 .box h3 { font-size: 15px !important; font-weight: 700 !important; }
 
+/* ── LANYARD CARD ─────────────────────────────── */
+.lanyard-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+.lanyard-string {
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(180deg, transparent, #ffbd39 40%, #ffbd39);
+  position: relative;
+}
+.lanyard-string::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: #ffbd39;
+}
+.lanyard-card {
+  width: 220px;
+  height: 320px;
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+}
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.7s cubic-bezier(.4,0,.2,1);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+}
+.card-front  { transform: rotateY(0deg);    background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%); }
+.card-back   { transform: rotateY(180deg);  background: linear-gradient(160deg, #16213e 0%, #0f3460 100%); }
+.lanyard-card.flipped .card-front { transform: rotateY(-180deg); }
+.lanyard-card.flipped .card-back  { transform: rotateY(0deg); }
+
+.card-stripe {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #ffbd39, #f39c12);
+}
+.card-hole {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+/* FRONT face */
+.card-photo {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid #ffbd39;
+  display: block;
+  margin: 46px auto 10px;
+  box-shadow: 0 4px 20px rgba(255,189,57,0.3);
+}
+.card-info { text-align: center; padding: 0 12px; }
+.card-name  { font-size: 15px; font-weight: 700; color: #fff; margin: 0 0 3px; }
+.card-role  { font-size: 10px; color: #ffbd39; font-weight: 600; letter-spacing: 0.5px; margin: 0 0 4px; line-height: 1.4; }
+.card-loc   { font-size: 11px; color: rgba(255,255,255,0.45); margin: 0; }
+.card-footer-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(255,189,57,0.1);
+  border-top: 1px solid rgba(255,189,57,0.2);
+  padding: 8px;
+  text-align: center;
+  font-size: 9px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.3px;
+}
+/* BACK face */
+.card-back-inner { padding: 46px 14px 40px; text-align: center; }
+.card-photo-back {
+  width: 70px; height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid rgba(255,189,57,0.4);
+  display: block;
+  margin: 0 auto 8px;
+}
+.card-back-inner .card-name { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.card-back-details p {
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.6);
+  margin: 5px 0;
+  text-align: left;
+  line-height: 1.5;
+}
+.card-socials { display: flex; justify-content: center; gap: 10px; margin-top: 12px; }
+.card-socials a {
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffbd39;
+  background: rgba(255,189,57,0.12);
+  border: 1px solid rgba(255,189,57,0.3);
+  border-radius: 20px;
+  padding: 4px 12px;
+  text-decoration: none;
+}
+.card-socials a:hover { background: rgba(255,189,57,0.25); }
+.lanyard-hint {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 12px;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+  .lanyard-wrap { display: none; }
+}
+
 /* ── ZOOM EFFECT ──────────────────────────────── */
 .zoom-effect { overflow: hidden; transition: transform 0.3s ease-out; }
 .zoom-effect:hover { transform: scale(1.05); }
@@ -240,8 +368,50 @@ body { font-family: 'Poppins', sans-serif !important; }
           <div class="overlay"></div>
           <div class="container">
             <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-              <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
-                <div class="overlay"></div>
+              <!-- LANYARD CARD -->
+              <div class="one-third js-fullheight order-md-last d-flex align-items-center justify-content-center" style="background:transparent;">
+                <div class="lanyard-wrap">
+                  <!-- string -->
+                  <div class="lanyard-string"></div>
+                  <!-- flip card -->
+                  <div class="lanyard-card" id="lanyardCard" onclick="this.classList.toggle('flipped')" title="Click to flip">
+                    <!-- FRONT -->
+                    <div class="card-face card-front">
+                      <div class="card-stripe"></div>
+                      <div class="card-hole"></div>
+                      <img src="images/krrish-card.png" alt="Krrish Tapwal" class="card-photo">
+                      <div class="card-info">
+                        <p class="card-name">Krrish Tapwal</p>
+                        <p class="card-role">MIS Executive &amp; Data Analyst</p>
+                        <p class="card-loc">📍 Chandigarh, India</p>
+                      </div>
+                      <div class="card-footer-bar">
+                        <span>krrishtapwal1212@gmail.com</span>
+                      </div>
+                    </div>
+                    <!-- BACK -->
+                    <div class="card-face card-back">
+                      <div class="card-stripe"></div>
+                      <div class="card-hole"></div>
+                      <div class="card-back-inner">
+                        <img src="images/krrish-card.png" alt="Krrish Tapwal" class="card-photo-back">
+                        <p class="card-name">Krrish Tapwal</p>
+                        <div class="card-back-details">
+                          <p>🎓 B.E. CSE — Chitkara University</p>
+                          <p>📊 Excel · Power BI · SQL · Python</p>
+                          <p>🏢 Red Bean Hospitality</p>
+                          <p>📍 45+ Sites Managed</p>
+                        </div>
+                        <div class="card-socials">
+                          <a href="https://www.linkedin.com/in/krrish-tapwal/" target="_blank">LinkedIn</a>
+                          <a href="https://github.com/KrrishTapwal" target="_blank">GitHub</a>
+                        </div>
+                      </div>
+                      <div class="card-footer-bar"><span>Click to flip back</span></div>
+                    </div>
+                  </div>
+                  <p class="lanyard-hint">👆 Click card to flip</p>
+                </div>
               </div>
               <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
                 <div class="text">
