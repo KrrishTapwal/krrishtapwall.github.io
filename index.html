@@ -6,8 +6,7 @@
     <title>Krrish Tapwal | MIS Executive & Data Analyst</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="MIS Executive and Data Analyst with 1+ year experience in dashboards, automation, and operational analytics across 45+ sites.">
-
+    <meta name="description" content="MIS Executive and Data Analyst — 45+ sites, dashboards, automation, FMS, IMS, CRM. Chandigarh.">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -21,141 +20,201 @@
     <link rel="stylesheet" href="css/style.css">
 
 <style>
-/* =============================================
-   WHITE / LIGHT THEME OVERRIDES
-   ============================================= */
+/* ── BASE ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif !important; }
 
-body {
-  background: #f8f9fa !important;
-  color: #2d3436 !important;
-  font-family: 'Poppins', sans-serif !important;
-}
-
-/* Navbar */
-#ftco-navbar {
-  background: #ffffff !important;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.08) !important;
-}
-#ftco-navbar .navbar-brand {
-  color: #2d3436 !important;
+/* ── TYPING ANIMATION ─────────────────────────── */
+#typing-animation {
+  font-size: 28px;
   font-weight: 700;
+  color: #ffbd39;
+  display: inline-block;
+  min-height: 38px;
 }
-#ftco-navbar .nav-link span {
-  color: #2d3436 !important;
+
+/* ── ABOUT SKILL BARS ─────────────────────────── */
+.skill-mf .progress {
+  margin: .4rem 0 1rem 0;
+  border-radius: 3px;
+  height: 7px;
+  background: rgba(255,255,255,0.1);
+}
+.skill-mf .progress .progress-bar {
+  height: 7px;
+  background: linear-gradient(90deg, #ffbd39, #f39c12);
+  border-radius: 3px;
+}
+.skill-mf span { font-size: 13px; color: rgba(255,255,255,0.85); }
+
+/* ── SECTION LABELS ───────────────────────────── */
+.section-label {
+  display: inline-block;
+  background: rgba(255,189,57,0.15);
+  color: #ffbd39;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,189,57,0.3);
+  margin-bottom: 12px;
+}
+
+/* ── ABOUT INFO LIST ──────────────────────────── */
+.about-info .title-s { color: #ffbd39 !important; font-weight: 600; }
+
+/* ── EXPERIENCE CARDS ─────────────────────────── */
+.exp-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-left: 4px solid #ffbd39;
+  border-radius: 10px;
+  padding: 28px 30px;
+  margin-bottom: 24px;
+  transition: box-shadow 0.3s;
+}
+.exp-card:hover { box-shadow: 0 8px 30px rgba(255,189,57,0.12); }
+.exp-card .exp-header { margin-bottom: 14px; }
+.exp-card .exp-role { font-size: 19px; font-weight: 700; color: #fff; margin: 0 0 4px 0; }
+.exp-card .exp-company { font-size: 14px; font-weight: 600; color: #ffbd39; }
+.exp-card .exp-meta { font-size: 12px; color: rgba(255,255,255,0.45); margin-left: 10px; }
+.exp-card .exp-desc { font-size: 13.5px; color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 14px; }
+.exp-card ul { padding-left: 18px; margin: 0 0 16px 0; }
+.exp-card ul li {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.75;
+  margin-bottom: 7px;
+  padding-left: 4px;
+}
+.exp-card ul li strong { color: #fff; font-weight: 600; }
+.exp-card .exp-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.exp-tag {
+  background: rgba(255,189,57,0.12);
+  color: #ffbd39;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,189,57,0.25);
+  letter-spacing: 0.3px;
+}
+
+/* ── TECH SKILLS GRID ─────────────────────────── */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 40px; }
+.skill-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 20px 22px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.skill-card:hover { border-color: rgba(255,189,57,0.3); box-shadow: 0 4px 20px rgba(255,189,57,0.08); }
+.skill-card h5 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffbd39;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 10px 0;
+}
+.skill-card p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; margin: 0; }
+
+/* ── EDUCATION CARDS ──────────────────────────── */
+.edu-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 22px 26px;
+  margin-bottom: 16px;
+}
+.edu-card .edu-degree { font-size: 17px; font-weight: 700; color: #fff; margin: 0 0 3px 0; }
+.edu-card .edu-school { font-size: 13px; font-weight: 600; color: #ffbd39; margin-bottom: 4px; }
+.edu-card .edu-year { font-size: 12px; color: rgba(255,255,255,0.4); }
+.edu-card .edu-grade { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+/* ── CERTS SECTION ────────────────────────────── */
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 6px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
   font-weight: 500;
+  transition: border-color 0.2s;
 }
-#ftco-navbar .nav-link:hover span {
-  color: #e67e22 !important;
+.cert-badge:hover { border-color: rgba(255,189,57,0.4); }
+.cert-badge span.dot { width: 7px; height: 7px; border-radius: 50%; background: #ffbd39; display: inline-block; flex-shrink: 0; }
+
+/* ── KPI STATS ROW ────────────────────────────── */
+.kpi-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+.kpi-box {
+  flex: 1;
+  min-width: 120px;
+  background: rgba(255,189,57,0.08);
+  border: 1px solid rgba(255,189,57,0.2);
+  border-radius: 10px;
+  padding: 14px 18px;
+  text-align: center;
 }
+.kpi-box .kpi-num { font-size: 26px; font-weight: 800; color: #ffbd39; line-height: 1; }
+.kpi-box .kpi-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.8px; }
 
-/* Hero stays dark — it uses a background image */
-.hero .slider-item {
-  background: #1a1a2e !important;
-}
-.hero .text h1 { color: #fff !important; }
-.hero .text h1 span { color: #f39c12 !important; }
-.hero .subheading { color: #f39c12 !important; }
+/* ── SECTION DIVIDER ──────────────────────────── */
+.section-divider { height: 2px; background: linear-gradient(90deg, #ffbd39, transparent); width: 60px; margin-bottom: 24px; border-radius: 2px; }
 
-/* Typing animation white */
-#typing-animation { color: #f8f9fa !important; }
+/* ── RESUME WRAP (keep for education) ────────── */
+.resume-wrap { border-left: 3px solid #ffbd39; padding: 18px 22px; background: rgba(255,255,255,0.03); border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+.resume-wrap h2 { font-size: 17px; color: #fff; font-weight: 700; margin-bottom: 2px; }
+.resume-wrap .date { font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 500; }
+.resume-wrap .position { font-size: 13px; color: #ffbd39; font-weight: 600; }
+.resume-wrap p { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; }
 
-/* About section */
-.ftco-about { background: #ffffff !important; }
-.about-info .title-s { color: #e67e22 !important; font-weight: 600; }
-.about-info p, .about-info span { color: #2d3436 !important; }
-.heading-section h1.big { color: #ececec !important; }
-.heading-section h2 { color: #2d3436 !important; }
-.heading-section p { color: #636e72 !important; }
-.about-info li span:first-child { color: #e67e22 !important; font-weight: 600; min-width: 130px; }
-.about-info li span:last-child { color: #2d3436 !important; }
+/* ── PROJECTS ─────────────────────────────────── */
+.blog-entry { border-radius: 10px; overflow: hidden; background: rgba(255,255,255,0.03) !important; border: 1px solid rgba(255,255,255,0.07) !important; transition: border-color 0.3s, box-shadow 0.3s; }
+.blog-entry:hover { border-color: rgba(255,189,57,0.3) !important; box-shadow: 0 6px 24px rgba(255,189,57,0.08); }
+.blog-entry .text h3.heading a { font-size: 15px !important; font-weight: 700 !important; }
+.blog-entry .text p { font-size: 13px; color: rgba(255,255,255,0.55) !important; line-height: 1.7; }
+.block-20 { height: 180px; }
 
-/* Skill bars */
-.skill-mf .progress { background-color: #e9ecef !important; border-radius: 4px !important; height: 8px !important; }
-.skill-mf .progress .progress-bar { background: linear-gradient(90deg, #e67e22, #f39c12) !important; border-radius: 4px !important; }
-.skill-mf span { color: #2d3436 !important; font-size: 13px !important; }
-.title-s { color: #e67e22 !important; font-weight: 700 !important; font-size: 13px !important; text-transform: uppercase !important; letter-spacing: 1px !important; }
+/* ── CONTACT BOXES ────────────────────────────── */
+.box { background: rgba(255,255,255,0.04) !important; border: 1px solid rgba(255,255,255,0.09) !important; border-radius: 10px; transition: border-color 0.3s; }
+.box:hover { border-color: rgba(255,189,57,0.3) !important; }
+.box h3 { font-size: 15px !important; font-weight: 700 !important; }
 
-/* Resume section */
-.ftco-section { background: #f8f9fa !important; }
-.resume-wrap { background: #ffffff !important; border-radius: 10px !important; padding: 24px !important; box-shadow: 0 2px 15px rgba(0,0,0,0.06) !important; border-left: 4px solid #e67e22 !important; margin-bottom: 20px; }
-.resume-wrap h2 { color: #2d3436 !important; font-size: 18px !important; font-weight: 700 !important; margin-bottom: 4px !important; }
-.resume-wrap .date { background: #fff3e0 !important; color: #e67e22 !important; font-size: 12px !important; font-weight: 600 !important; padding: 4px 10px !important; border-radius: 20px !important; display: inline-block !important; margin-bottom: 6px !important; }
-.resume-wrap .position { color: #e67e22 !important; font-weight: 600 !important; font-size: 14px !important; }
-.resume-wrap p, .resume-wrap li { color: #636e72 !important; font-size: 14px !important; line-height: 1.7 !important; }
-.resume-wrap strong { color: #2d3436 !important; }
-.big-4 { color: #e8e8e8 !important; font-size: 60px !important; }
-.underline { height: 3px !important; background: linear-gradient(90deg, #e67e22, #f39c12) !important; width: 60px !important; border-radius: 2px !important; margin-bottom: 20px !important; }
+/* ── ZOOM EFFECT ──────────────────────────────── */
+.zoom-effect { overflow: hidden; transition: transform 0.3s ease-out; }
+.zoom-effect:hover { transform: scale(1.05); }
 
-/* Skills technical section */
-.tech-skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 10px; }
-.tech-skills-card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-top: 3px solid #e67e22; }
-.tech-skills-card h5 { color: #e67e22; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-.tech-skills-card p { color: #636e72; font-size: 13px; line-height: 1.7; margin: 0; }
+/* ── COUNTER ──────────────────────────────────── */
+.ftco-counter .number { color: #ffbd39 !important; }
 
-/* Projects */
-.blog-entry .text h3.heading a { color: #2d3436 !important; font-size: 16px !important; font-weight: 700 !important; }
-.blog-entry .text h3.heading a:hover { color: #e67e22 !important; }
-.blog-entry .text p { color: #636e72 !important; font-size: 14px !important; }
-.blog-entry { background: #fff !important; border-radius: 10px !important; overflow: hidden !important; box-shadow: 0 2px 15px rgba(0,0,0,0.06) !important; }
+/* ── ABOUT COUNTER ────────────────────────────── */
+.counter-wrap .number { color: #ffbd39 !important; font-size: 32px !important; font-weight: 800 !important; }
 
-/* Counter section */
-.ftco-counter { background: linear-gradient(135deg, #1a1a2e, #2d3561) !important; }
-.ftco-counter .number { color: #f39c12 !important; }
-.ftco-counter span { color: #fff !important; }
-.block-18 .text strong { font-size: 50px !important; font-weight: 800 !important; }
+/* ── BIG HEADING ──────────────────────────────── */
+.big-4 { font-size: 55px; font-weight: 800; color: rgba(255,255,255,0.05); letter-spacing: -2px; line-height: 1; margin-bottom: -16px; }
 
-/* Hire me section */
-.ftco-hireme { background: linear-gradient(135deg, #e67e22, #f39c12) !important; }
-.ftco-hireme h2 { color: #fff !important; }
-.ftco-hireme h4 { color: rgba(255,255,255,0.9) !important; }
+/* ── SECTION BG ALT ───────────────────────────── */
+#resume-section { background: #1b1b24 !important; }
+#project-section { background: #111118 !important; }
 
-/* Contact */
-.contact-section { background: #ffffff !important; }
-.contact-section .heading-section h2 { color: #2d3436 !important; }
-.contact-section .heading-section p { color: #636e72 !important; }
-.box h3 { color: #2d3436 !important; font-weight: 700 !important; }
-.box p, .box p a { color: #636e72 !important; }
-.box .icon span { color: #e67e22 !important; font-size: 28px !important; }
-.box { background: #fff !important; border-radius: 10px !important; box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important; }
-
-/* Footer */
-.ftco-footer { background: #1a1a2e !important; }
-.ftco-footer p, .ftco-footer a { color: rgba(255,255,255,0.6) !important; }
-.ftco-footer-social a { color: rgba(255,255,255,0.6) !important; }
-.ftco-footer-social a:hover { color: #f39c12 !important; }
-
-/* Buttons */
-.btn-primary { background: linear-gradient(135deg, #e67e22, #f39c12) !important; border: none !important; color: #fff !important; font-weight: 600 !important; border-radius: 6px !important; }
-.btn-primary:hover { opacity: 0.9 !important; transform: translateY(-2px) !important; box-shadow: 0 6px 20px rgba(230,126,34,0.4) !important; }
-.btn-white { background: transparent !important; border: 2px solid rgba(255,255,255,0.7) !important; color: #fff !important; font-weight: 600 !important; border-radius: 6px !important; }
-
-/* Headings in sections */
-h1.big.big-2 { color: #ececec !important; }
-.counter-wrap .number { color: #e67e22 !important; font-size: 36px !important; font-weight: 800 !important; }
-
-/* Tags in experience */
-.exp-tag { display: inline-block; background: #fff3e0; color: #e67e22; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin: 3px 3px 3px 0; border: 1px solid #f0d0a0; }
-
-/* Achievements list styling */
-.resume-wrap ul { padding-left: 18px; }
-.resume-wrap ul li { margin-bottom: 6px; }
-
-/* Section alternating backgrounds */
-#resume-section { background: #f0f2f5 !important; }
-#project-section { background: #ffffff !important; }
-#contact-section { background: #f0f2f5 !important; }
-
-/* Mobile hamburger */
-.fh5co-nav-toggle span, .fh5co-nav-toggle span:before, .fh5co-nav-toggle span:after { background: #2d3436 !important; }
-
-/* img-about overlay */
-.img-about.img { background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 100%) !important; }
+/* ── BUTTONS ──────────────────────────────────── */
+.btn-primary { background: #ffbd39 !important; border-color: #ffbd39 !important; color: #1b1b24 !important; font-weight: 700 !important; }
+.btn-primary:hover { background: #e6a828 !important; border-color: #e6a828 !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,189,57,0.35) !important; }
 </style>
-
   </head>
+
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-    <!-- NAVBAR -->
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
       <div class="container">
         <a class="navbar-brand" href="index.html">Krrish Tapwal</a>
@@ -174,7 +233,7 @@ h1.big.big-2 { color: #ececec !important; }
       </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- ═══════════════ HERO ═══════════════ -->
     <section id="home-section" class="hero">
       <div class="home-slider owl-carousel">
         <div class="slider-item">
@@ -186,32 +245,35 @@ h1.big.big-2 { color: #ececec !important; }
               </div>
               <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
                 <div class="text">
-                  <span class="subheading">Hello!</span>
-                  <h1 class="mb-4 mt-3">I'm <span>Krrish Tapwal</span></h1>
+                  <span class="subheading">Hello, I'm</span>
+                  <h1 class="mb-2 mt-3">Krrish <span>Tapwal</span></h1>
                   <span id="typing-animation"></span>
                   <script>
-                    const typingAnimationElement = document.getElementById('typing-animation');
-                    const typingTexts = [
-                      'MIS Executive  ',
-                      'Data Analyst  ',
-                      'Dashboard Designer  ',
-                      'Automation Specialist  ',
-                      'Reporting Expert  ',
-                    ];
-                    function playTypingAnimation(text) {
+                    const typingEl = document.getElementById('typing-animation');
+                    const roles = ['MIS Executive  ','Data Analyst  ','Dashboard Designer  ','Automation Specialist  ','Reporting Expert  '];
+                    function type(text) {
                       for (let i = 0; i < text.length; i++) {
-                        setTimeout(() => { typingAnimationElement.textContent += text[i]; }, i * 150);
+                        setTimeout(() => { typingEl.textContent += text[i]; }, i * 120);
                       }
                       setTimeout(() => {
-                        typingAnimationElement.textContent = '';
-                        playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-                      }, text.length * 150 + 1000);
+                        typingEl.textContent = '';
+                        type(roles[(roles.indexOf(text) + 1) % roles.length]);
+                      }, text.length * 120 + 1200);
                     }
-                    playTypingAnimation(typingTexts[0]);
+                    type(roles[0]);
                   </script>
-                  <p class="mt-3">
-                    <a href="https://www.linkedin.com/in/krrish-tapwal/" target="_blank" class="btn btn-primary py-3 px-4">LinkedIn</a>
-                    <a href="https://github.com/KrrishTapwal" target="_blank" class="btn btn-white btn-outline-white py-3 px-4">My Work</a>
+
+                  <!-- KPI quick stats -->
+                  <div class="kpi-row mt-4 mb-4" style="max-width:460px;">
+                    <div class="kpi-box"><div class="kpi-num">45+</div><div class="kpi-label">Sites Managed</div></div>
+                    <div class="kpi-box"><div class="kpi-num">1+</div><div class="kpi-label">Year Exp</div></div>
+                    <div class="kpi-box"><div class="kpi-num">15+</div><div class="kpi-label">Projects</div></div>
+                    <div class="kpi-box"><div class="kpi-num">10+</div><div class="kpi-label">Certifications</div></div>
+                  </div>
+
+                  <p>
+                    <a href="#resume-section" class="btn btn-primary py-3 px-4">View Resume</a>
+                    <a href="https://github.com/KrrishTapwal" target="_blank" class="btn btn-white btn-outline-white py-3 px-4 ml-2">GitHub</a>
                   </p>
                 </div>
               </div>
@@ -222,287 +284,306 @@ h1.big.big-2 { color: #ececec !important; }
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- ═══════════════ ABOUT ═══════════════ -->
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
       <div class="container">
-        <div class="row">
-          <div class="row d-flex align-items-stretch">
-            <div class="col-md-6 col-lg-5 d-flex">
-              <div class="img-about img d-flex align-items-stretch">
-                <div class="overlay">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="Krrish Tapwal">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span>Krrish Tapwal</span></p>
-                        <p><span class="title-s">Role: </span> <span>MIS Executive & Data Analyst</span></p>
-                        <p><span class="title-s">Experience: </span> <span>1+ Year</span></p>
-                        <p><span class="title-s">Sites Managed: </span> <span>45+ Retail & Hospitality</span></p>
-                        <p><span class="title-s">Location: </span> <span>Chandigarh, India</span></p>
-                      </div>
+        <div class="row d-flex align-items-stretch">
+
+          <!-- Left panel: photo + skill bars -->
+          <div class="col-md-6 col-lg-5 d-flex">
+            <div class="img-about img d-flex align-items-stretch">
+              <div class="overlay">
+                <div class="row">
+                  <div class="col-sm-6 col-md-5">
+                    <div class="about-img">
+                      <img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="Krrish Tapwal">
                     </div>
                   </div>
-
-                  <div class="skill-mf">
-                    <p class="title-s">Core Skills</p>
-
-                    <span>Advanced Excel & Power Query</span> <span class="pull-right">95%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 95%;"></div>
-                    </div>
-
-                    <span>MIS Reporting & Dashboards</span> <span class="pull-right">93%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 93%;"></div>
-                    </div>
-
-                    <span>Google Sheets & Apps Script</span> <span class="pull-right">88%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 88%;"></div>
-                    </div>
-
-                    <span>SQL</span> <span class="pull-right">82%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 82%;"></div>
-                    </div>
-
-                    <span>Power BI & Data Visualization</span> <span class="pull-right">80%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
-                    </div>
-
-                    <span>Python (Pandas, Data Cleaning)</span> <span class="pull-right">72%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 72%;"></div>
+                  <div class="col-sm-6 col-md-7">
+                    <div class="about-info">
+                      <p><span class="title-s">Name: </span><span>Krrish Tapwal</span></p>
+                      <p><span class="title-s">Role: </span><span>MIS Executive &amp; Data Analyst</span></p>
+                      <p><span class="title-s">Experience: </span><span>1+ Year</span></p>
+                      <p><span class="title-s">Sites: </span><span>45+ Retail &amp; Hospitality</span></p>
+                      <p><span class="title-s">Location: </span><span>Chandigarh, India</span></p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-              <div class="row justify-content-start pb-3">
-                <div class="col-md-12 heading-section ftco-animate">
-                  <h1 class="big">About</h1>
-                  <h2 class="mb-4">About Me</h2>
-                  <p>Client-facing <strong>MIS Executive and Data Analyst</strong> with 1+ year of experience delivering automated reporting, dashboards, and operational analytics across <strong>45+ retail and hospitality sites</strong>. Skilled in Advanced Excel (Power Query, Pivot Tables, complex formulas), SQL, Power BI, Google Sheets, and Google Apps Script.</p>
-                  <p class="mt-3">I don't just analyze data — I <strong>design master systems</strong> (FMS, IMS, CRM dashboards, Cafe App) and explain them clearly to stakeholders and clients, directly supporting client retention and new business acquisition.</p>
-
-                  <ul class="about-info mt-4 px-md-0 px-2">
-                    <li class="d-flex"><span>Profile:</span> <span>MIS Executive & Data Analytics</span></li>
-                    <li class="d-flex"><span>Education:</span> <span>B.E. — Computer Science & Data Science</span></li>
-                    <li class="d-flex"><span>University:</span> <span>Chitkara University (CGPA: 8.54)</span></li>
-                    <li class="d-flex"><span>BI Tools:</span> <span>Power BI, Excel Dashboards, Google Sheets</span></li>
-                    <li class="d-flex"><span>Automation:</span> <span>Google Apps Script, ChatGPT for Analysis</span></li>
-                    <li class="d-flex"><span>Languages:</span> <span>English, Hindi</span></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="counter-wrap ftco-animate d-flex mt-md-3">
-                <div class="text">
-                  <p class="mb-4">
-                    <span class="number" data-number="45">0</span><span>+ &nbsp;Sites Managed</span>
-                  </p>
-                  <p><a href="https://www.linkedin.com/in/krrish-tapwal/" target="_blank" class="btn btn-primary py-3 px-3">View LinkedIn</a></p>
+                <div class="skill-mf mt-3">
+                  <p class="title-s">Skill Proficiency</p>
+                  <span>Advanced Excel &amp; Power Query</span><span class="pull-right">95%</span>
+                  <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+                  <span>MIS Reporting &amp; Dashboards</span><span class="pull-right">93%</span>
+                  <div class="progress"><div class="progress-bar" style="width:93%"></div></div>
+                  <span>Google Sheets &amp; Apps Script</span><span class="pull-right">88%</span>
+                  <div class="progress"><div class="progress-bar" style="width:88%"></div></div>
+                  <span>SQL</span><span class="pull-right">82%</span>
+                  <div class="progress"><div class="progress-bar" style="width:82%"></div></div>
+                  <span>Power BI &amp; Data Visualization</span><span class="pull-right">80%</span>
+                  <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
+                  <span>Python (Pandas, Data Cleaning)</span><span class="pull-right">72%</span>
+                  <div class="progress"><div class="progress-bar" style="width:72%"></div></div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Right panel: bio + info -->
+          <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+            <div class="row justify-content-start pb-3">
+              <div class="col-md-12 heading-section ftco-animate">
+                <h1 class="big">About</h1>
+                <h2 class="mb-3">About Me</h2>
+
+                <p style="font-size:15px; line-height:1.8; color:rgba(255,255,255,0.75);">
+                  Client-facing <strong style="color:#fff;">MIS Executive and Data Analyst</strong> with 1+ year of experience delivering
+                  automated reporting, dashboards, and operational analytics across
+                  <strong style="color:#ffbd39;">45+ retail and hospitality sites</strong>.
+                </p>
+                <p class="mt-3" style="font-size:14px; line-height:1.8; color:rgba(255,255,255,0.6);">
+                  Skilled in Advanced Excel (Power Query, Pivot Tables, complex formulas), SQL, Power BI,
+                  Google Sheets, and Google Apps Script. I design master systems — FMS, IMS, CRM dashboards,
+                  Cafe App — and explain them clearly to stakeholders and site clients, directly supporting
+                  <strong style="color:#fff;">client retention and new business acquisition</strong>.
+                </p>
+
+                <ul class="about-info mt-4 px-md-0 px-2">
+                  <li class="d-flex"><span>Profile:</span><span>MIS Executive &amp; Data Analytics</span></li>
+                  <li class="d-flex"><span>Education:</span><span>B.E. Computer Science &amp; Data Science</span></li>
+                  <li class="d-flex"><span>University:</span><span>Chitkara University (CGPA: 8.54)</span></li>
+                  <li class="d-flex"><span>BI Tools:</span><span>Power BI, Excel, Google Sheets</span></li>
+                  <li class="d-flex"><span>Automation:</span><span>Apps Script, ChatGPT for Analysis</span></li>
+                  <li class="d-flex"><span>Languages:</span><span>English, Hindi</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="counter-wrap ftco-animate d-flex mt-md-3">
+              <div class="text">
+                <p class="mb-4">
+                  <span class="number" data-number="45">0</span>
+                  <span>+ &nbsp;Sites Managed</span>
+                </p>
+                <p>
+                  <a href="https://www.linkedin.com/in/krrish-tapwal/" target="_blank" class="btn btn-primary py-3 px-4">LinkedIn Profile</a>
+                  &nbsp;
+                  <a href="https://krizzkamaliya.hackerresume.io/3a6b5802-3f55-4060-bbfd-db5acabf7401" target="_blank" class="btn btn-white btn-outline-white py-3 px-4">Download CV</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
 
-    <!-- RESUME -->
+    <!-- ═══════════════ RESUME ═══════════════ -->
     <section class="ftco-section ftco-no-pb" id="resume-section">
       <div class="container">
-        <div class="row justify-content-center pb-5">
+
+        <!-- Section heading -->
+        <div class="row justify-content-center pb-4">
           <div class="col-md-10 heading-section text-center ftco-animate">
             <h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Professional Summary</h2>
-            <p>Client-facing MIS Executive and Data Analyst with 1+ year of experience delivering automated reporting, dashboards, and operational analytics across 45+ retail and hospitality sites. Proficient in Advanced Excel, SQL, Power BI, Google Sheets, and Google Apps Script. Proven ability to design master systems and explain them clearly to stakeholders — directly supporting client retention and new business acquisition.</p>
+            <h2 class="mb-3">Professional Experience</h2>
+            <p style="font-size:14px; color:rgba(255,255,255,0.55); max-width:700px; margin:0 auto;">
+              Client-facing MIS Executive and Data Analyst with 1+ year of experience delivering automated reporting,
+              dashboards, and operational analytics across 45+ retail and hospitality sites.
+            </p>
           </div>
         </div>
 
-        <!-- TECHNICAL SKILLS -->
+        <!-- ── TECHNICAL SKILLS ── -->
         <div class="row mb-2">
           <div class="col-12">
-            <h1 class="big-4">Technical Skills</h1>
-            <div class="underline"></div>
+            <span class="section-label">Technical Skills</span>
+            <div class="section-divider"></div>
           </div>
         </div>
-        <div class="tech-skills-grid mb-5">
-          <div class="tech-skills-card">
-            <h5>📊 Reporting & Analytics</h5>
-            <p>Advanced Excel (Pivot Tables, Power Query, VLOOKUP, XLOOKUP, INDEX-MATCH, Nested IF, Conditional Formatting), MIS Reporting, KPI Dashboards</p>
+        <div class="skills-grid mb-5">
+          <div class="skill-card">
+            <h5>📊 Reporting &amp; Analytics</h5>
+            <p>Advanced Excel — Pivot Tables, Power Query, VLOOKUP, XLOOKUP, INDEX-MATCH, Nested IF, Conditional Formatting · MIS Reporting · KPI Dashboards</p>
           </div>
-          <div class="tech-skills-card">
-            <h5>📈 BI & Visualization</h5>
-            <p>Power BI (Basics), DAX, Data Modeling, Dashboard Design, Google Looker Studio</p>
+          <div class="skill-card">
+            <h5>📈 BI &amp; Visualization</h5>
+            <p>Power BI · DAX · Data Modeling · Dashboard Design · Google Sheets Dashboards</p>
           </div>
-          <div class="tech-skills-card">
-            <h5>🗄️ Databases & Scripting</h5>
-            <p>SQL (Joins, Aggregations, Subqueries), Python (Basics — Pandas, Data Cleaning), Google Apps Script (Basics)</p>
+          <div class="skill-card">
+            <h5>🗄️ Databases &amp; Scripting</h5>
+            <p>SQL — Joins, Aggregations, Subqueries · Python (Basics) — Pandas, Data Cleaning · Google Apps Script (Basics)</p>
           </div>
-          <div class="tech-skills-card">
-            <h5>🛠️ Tools & Platforms</h5>
-            <p>Google Sheets, Google Workspace, CRM Systems, FMS, IMS, ChatGPT for Analysis</p>
+          <div class="skill-card">
+            <h5>🛠️ Tools &amp; Platforms</h5>
+            <p>Google Sheets · Google Workspace · CRM Systems · FMS · IMS · Cafe App · ChatGPT for Analysis</p>
           </div>
-          <div class="tech-skills-card">
+          <div class="skill-card">
             <h5>💡 Core Competencies</h5>
-            <p>Data Cleaning, Process Automation, Inventory Tracking, Expense Management, Client Communication, Stakeholder Reporting, Team Training, Problem Solving</p>
+            <p>Data Cleaning · Process Automation · Inventory Tracking · Expense Management · Client Communication · Stakeholder Reporting · Team Training</p>
           </div>
         </div>
 
-        <!-- EXPERIENCE -->
+        <!-- ── EXPERIENCE ── -->
         <div class="row mb-2">
           <div class="col-12">
-            <h1 class="big-4">Experience</h1>
-            <div class="underline"></div>
-          </div>
-        </div>
-        <br>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Nov 2025 — Present &nbsp;|&nbsp; Red Bean Hospitality</span>
-              <h2>MIS Executive / MIS Analyst</h2>
-              <span class="position">Red Bean Hospitality &nbsp;·&nbsp; Full Time</span>
-              <ul class="mt-3">
-                <li>Designed and managed the <strong>FMS (Follow-Ups Management System)</strong> to track end-to-end company processes, monitor task ownership, and maintain operational data across departments.</li>
-                <li>Built an <strong>automated delegation scoring dashboard</strong> comparing planned vs. actual completion dates — generating performance scores that improved accountability and on-time task completion.</li>
-                <li>Analyzed CRM data for an in-house CRM built on Google Apps Script; created dedicated dashboard sections giving management real-time visibility into leads, customer interactions, and conversions.</li>
-                <li>Managed <strong>IMS (Inventory Management System)</strong> across 45+ sites — stock-in/out tracking, purchase orders, weekly pricing updates, and low-stock alerts — reducing wastage and stock-outs.</li>
-                <li>Tracked daily, weekly, and monthly <strong>expenses for 45+ sites</strong> and produced consolidated expense MIS reports for senior leadership to support cost-control decisions.</li>
-                <li>Built <strong>Power BI dashboards</strong> (and Excel/Google Sheets equivalents) covering sales, expenses, inventory movement, customer patterns, and operational KPIs.</li>
-                <li>Acted as the <strong>client-facing point of contact</strong> — explained the IMS, Cafe App, and dashboards directly to stakeholders and site clients in simple terms, improving transparency into site operations.</li>
-                <li>Clear demonstrations of master systems (FMS, IMS, CRM, dashboards) helped <strong>onboard new clients and secure additional investment</strong> in the company's services.</li>
-                <li><strong>Trained and mentored a junior MIS executive</strong> on reporting workflows, dashboard logic, and data-quality standards to ensure continuity of MIS operations.</li>
-                <li>Designed and maintained <strong>daily operational checklists</strong> for stock validation, order accuracy, hygiene, and workflow efficiency across all sites.</li>
-                <li>Cleaned, structured, and transformed raw operational data using <strong>Advanced Excel and basic Python scripts</strong> to ensure reporting accuracy.</li>
-                <li>Partnered with operations and tech teams to deliver data-backed recommendations that improved process efficiency and reduced turnaround time.</li>
-              </ul>
-              <div class="mt-3">
-                <span class="exp-tag">Advanced Excel</span>
-                <span class="exp-tag">Power BI</span>
-                <span class="exp-tag">Google Sheets</span>
-                <span class="exp-tag">Apps Script</span>
-                <span class="exp-tag">SQL</span>
-                <span class="exp-tag">Python</span>
-                <span class="exp-tag">FMS</span>
-                <span class="exp-tag">IMS</span>
-                <span class="exp-tag">CRM</span>
-                <span class="exp-tag">ChatGPT</span>
-              </div>
-            </div>
+            <span class="section-label">Work Experience</span>
+            <div class="section-divider"></div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Dec 2024 — Nov 2025 &nbsp;|&nbsp; 360DigiTMG</span>
-              <h2>Data Analyst Intern</h2>
-              <span class="position">360DigiTMG &nbsp;·&nbsp; Internship</span>
-              <ul class="mt-3">
-                <li>Collected, cleaned, and analyzed raw data to prepare monthly business reports in Microsoft Excel.</li>
-                <li>Built interactive <strong>Excel dashboards</strong> tracking KPIs such as revenue, product performance, and sales trends.</li>
-                <li>Used advanced Excel functions (VLOOKUP, XLOOKUP, INDEX-MATCH, Nested IFs) to streamline reporting and improve data accuracy.</li>
-                <li>Designed <strong>Pivot Tables and Pivot Charts</strong> to summarize large datasets and surface actionable insights.</li>
-                <li>Applied conditional formatting to highlight patterns, trends, and anomalies for stakeholders.</li>
-                <li>Leveraged <strong>ChatGPT prompting techniques</strong> to speed up data analysis and decision-making.</li>
-                <li>Collaborated with cross-functional team members to support data-driven business strategies.</li>
-              </ul>
-              <div class="mt-3">
-                <span class="exp-tag">Excel</span>
-                <span class="exp-tag">SQL</span>
-                <span class="exp-tag">Power BI</span>
-                <span class="exp-tag">Python</span>
-                <span class="exp-tag">Pivot Tables</span>
-                <span class="exp-tag">ChatGPT</span>
-              </div>
+        <!-- Red Bean -->
+        <div class="exp-card ftco-animate">
+          <div class="exp-header d-flex align-items-start justify-content-between flex-wrap gap-2">
+            <div>
+              <p class="exp-role">MIS Executive / MIS Analyst</p>
+              <p class="exp-company">Red Bean Hospitality
+                <span class="exp-meta">· Nov 2025 — Present &nbsp;|&nbsp; Full Time</span>
+              </p>
             </div>
+            <span class="exp-tag" style="align-self:flex-start;">Current Role</span>
+          </div>
+          <p class="exp-desc">
+            Leading MIS operations across 45+ retail and hospitality sites — designing and managing core reporting
+            infrastructure, automating workflows, and acting as the client-facing data point of contact.
+          </p>
+          <ul>
+            <li>Designed and managed the <strong>FMS (Follow-Ups Management System)</strong> to track end-to-end company processes, monitor task ownership, and maintain operational data across departments.</li>
+            <li>Built an <strong>automated delegation scoring dashboard</strong> comparing planned vs. actual completion dates — improving accountability and on-time task completion.</li>
+            <li>Analyzed CRM data (built on Google Apps Script); created dedicated dashboard sections giving management real-time visibility into <strong>leads, customer interactions, and conversions</strong>.</li>
+            <li>Managed <strong>IMS (Inventory Management System)</strong> across 45+ sites — stock-in/out tracking, purchase orders, weekly pricing updates, and low-stock alerts — reducing wastage and stock-outs.</li>
+            <li>Tracked daily, weekly, and monthly <strong>expenses for 45+ sites</strong>; produced consolidated MIS reports for senior leadership to support cost-control decisions.</li>
+            <li>Built <strong>Power BI dashboards</strong> (and Excel/Google Sheets equivalents) covering sales, expenses, inventory movement, customer patterns, and operational KPIs.</li>
+            <li>Acted as <strong>client-facing point of contact</strong> — explained the IMS, Cafe App, and dashboards to stakeholders and site clients, improving transparency and trust.</li>
+            <li>Clear demonstrations of master systems (FMS, IMS, CRM, dashboards) helped <strong>onboard new clients and secure additional business investment</strong>.</li>
+            <li><strong>Trained and mentored a junior MIS executive</strong> on reporting workflows, dashboard logic, and data-quality standards.</li>
+            <li>Designed daily operational checklists for stock validation, order accuracy, hygiene, and workflow efficiency across all sites.</li>
+            <li>Cleaned and transformed raw operational data using <strong>Advanced Excel and basic Python scripts</strong> to ensure reporting accuracy.</li>
+            <li>Partnered with operations and tech teams to deliver data-backed recommendations that improved process efficiency.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Advanced Excel</span><span class="exp-tag">Power BI</span><span class="exp-tag">Google Sheets</span>
+            <span class="exp-tag">Apps Script</span><span class="exp-tag">SQL</span><span class="exp-tag">Python</span>
+            <span class="exp-tag">FMS</span><span class="exp-tag">IMS</span><span class="exp-tag">CRM</span><span class="exp-tag">ChatGPT</span>
+          </div>
+        </div>
+
+        <!-- 360DigiTMG -->
+        <div class="exp-card ftco-animate">
+          <div class="exp-header">
+            <p class="exp-role">Data Analyst Intern</p>
+            <p class="exp-company">360DigiTMG
+              <span class="exp-meta">· Dec 2024 — Nov 2025 &nbsp;|&nbsp; Internship</span>
+            </p>
+          </div>
+          <ul>
+            <li>Collected, cleaned, and analyzed raw data to prepare <strong>monthly business reports</strong> in Microsoft Excel.</li>
+            <li>Built interactive Excel dashboards tracking KPIs such as revenue, product performance, and sales trends.</li>
+            <li>Used advanced Excel functions — <strong>VLOOKUP, XLOOKUP, INDEX-MATCH, Nested IFs</strong> — to streamline reporting and improve data accuracy.</li>
+            <li>Designed Pivot Tables and Pivot Charts to summarize large datasets and surface actionable insights.</li>
+            <li>Applied conditional formatting to highlight patterns, trends, and anomalies for stakeholders.</li>
+            <li>Leveraged <strong>ChatGPT prompting techniques</strong> to accelerate data analysis and decision-making.</li>
+            <li>Collaborated with cross-functional team members to support data-driven business strategies.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Excel</span><span class="exp-tag">SQL</span><span class="exp-tag">Power BI</span>
+            <span class="exp-tag">Python</span><span class="exp-tag">Pivot Tables</span><span class="exp-tag">ChatGPT</span>
           </div>
         </div>
 
         <br>
 
-        <!-- EDUCATION -->
+        <!-- ── EDUCATION ── -->
         <div class="row mb-2">
           <div class="col-12">
-            <h1 class="big-4">Education</h1>
-            <div class="underline"></div>
+            <span class="section-label">Education</span>
+            <div class="section-divider"></div>
           </div>
         </div>
-        <br>
         <div class="row">
           <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Jun 2020 — Jun 2024</span>
-              <h2>Bachelor of Engineering</h2>
-              <span class="position">Computer Science & Data Science &nbsp;·&nbsp; Chitkara University</span>
-              <p class="mt-3"><strong>CGPA: 8.54</strong></p>
+            <div class="edu-card ftco-animate">
+              <p class="edu-degree">Bachelor of Engineering</p>
+              <p class="edu-school">Computer Science &amp; Data Science — Chitkara University</p>
+              <p class="edu-year">Jun 2020 — Jun 2024</p>
+              <p class="edu-grade"><strong style="color:#ffbd39;">CGPA: 8.54</strong></p>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2020</span>
-              <h2>Higher Secondary School</h2>
-              <span class="position">Him Academy Public School</span>
-              <p class="mt-3">Grade: A</p>
+            <div class="edu-card ftco-animate">
+              <p class="edu-degree">Higher Secondary School</p>
+              <p class="edu-school">Him Academy Public School</p>
+              <p class="edu-year">2020</p>
+              <p class="edu-grade">Grade: A</p>
             </div>
           </div>
         </div>
 
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-6 text-center ftco-animate">
-            <p><a href="https://krizzkamaliya.hackerresume.io/3a6b5802-3f55-4060-bbfd-db5acabf7401" target="_blank" class="btn btn-primary py-4 px-5">Download CV</a></p>
+        <!-- ── CERTIFICATIONS ── -->
+        <br>
+        <div class="row mb-2">
+          <div class="col-12">
+            <span class="section-label">Certifications</span>
+            <div class="section-divider"></div>
           </div>
         </div>
+        <div class="row mb-4">
+          <div class="col-12">
+            <span class="cert-badge"><span class="dot"></span>Google Cloud Data Analytics</span>
+            <span class="cert-badge"><span class="dot"></span>HackerRank SQL — Intermediate</span>
+            <span class="cert-badge"><span class="dot"></span>Microsoft Azure AI Fundamentals</span>
+            <span class="cert-badge"><span class="dot"></span>AI &amp; ML — Microsoft &amp; SAP (AICTE)</span>
+            <span class="cert-badge"><span class="dot"></span>ISRO Remote Sensing</span>
+            <span class="cert-badge"><span class="dot"></span>360DigiTMG Data Science</span>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-12">
+            <a href="https://postimg.cc/gallery/X5sRSBp" target="_blank" class="btn btn-primary py-3 px-5">View All Certificates</a>
+            &nbsp;&nbsp;
+            <a href="https://krizzkamaliya.hackerresume.io/3a6b5802-3f55-4060-bbfd-db5acabf7401" target="_blank" class="btn btn-white btn-outline-white py-3 px-5">Download CV</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
 
-    <!-- PROJECTS -->
+    <!-- ═══════════════ PROJECTS ═══════════════ -->
     <section class="ftco-section" id="project-section">
       <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
+        <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <p>Real-world analytics projects across Excel dashboards, SQL, Python, and Power BI.</p>
+            <h2 class="mb-3">Featured Projects</h2>
+            <p style="font-size:14px; color:rgba(255,255,255,0.5);">Real-world analytics projects — Excel dashboards, SQL, Python, Power BI, and ML.</p>
           </div>
         </div>
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
             <div class="blog-entry justify-content-end">
-              <a href="https://github.com/KrrishTapwal/FNP-Ferns-and-Petals-Sales-Analysis-Dashboard" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');"></a>
+              <a href="https://github.com/KrrishTapwal/FNP-Ferns-and-Petals-Sales-Analysis-Dashboard" target="_blank" class="block-20 zoom-effect" style="background-image:url('images/proj_1.jpg');"></a>
               <div class="text mt-3 float-right d-block">
                 <h3 class="heading"><a href="https://github.com/KrrishTapwal/FNP-Ferns-and-Petals-Sales-Analysis-Dashboard" target="_blank">🌸 FNP Sales Analysis Dashboard</a></h3>
-                <p>Interactive Excel dashboard uncovering customer behavior, sales performance, delivery timelines, and product trends from Ferns &amp; Petals gifting platform data.</p>
+                <p>Interactive Excel dashboard uncovering customer behavior, sales performance, delivery timelines, and product trends from Ferns &amp; Petals data.</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
             <div class="blog-entry justify-content-end">
-              <a href="https://github.com/KrrishTapwal/-Coffee-Shop-Sales-Dashboard-" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');"></a>
+              <a href="https://github.com/KrrishTapwal/-Coffee-Shop-Sales-Dashboard-" target="_blank" class="block-20 zoom-effect" style="background-image:url('images/proj_2.jpg');"></a>
               <div class="text mt-3 float-right d-block">
                 <h3 class="heading"><a href="https://github.com/KrrishTapwal/-Coffee-Shop-Sales-Dashboard-" target="_blank">☕ Coffee Shop Sales Dashboard</a></h3>
-                <p>Interactive Excel dashboard analyzing total sales, transactions, avg bill, hourly trends, product revenue, and store footfall using Pivot Tables, Charts, and Slicers.</p>
+                <p>Excel dashboard analyzing total sales, transactions, avg bill, hourly trends, and store footfall — using Pivot Tables, Charts, and dynamic Slicers.</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry">
-              <a href="https://github.com/KrrishTapwal/Hospital-Emergency-Room-Dashboard-Real-Time-Healthcare-Analytics-in-Excel" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');"></a>
+            <div class="blog-entry ftco-animate">
+              <a href="https://github.com/KrrishTapwal/Hospital-Emergency-Room-Dashboard-Real-Time-Healthcare-Analytics-in-Excel" target="_blank" class="block-20 zoom-effect" style="background-image:url('images/proj_3.jpg');"></a>
               <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="https://github.com/KrrishTapwal/Hospital-Emergency-Room-Dashboard-Real-Time-Healthcare-Analytics-in-Excel" target="_blank">🏥 Hospital ER Dashboard</a></h3>
-                <p>Real-time healthcare analytics dashboard in Excel tracking ER patient flow, wait times, admission rates, and resource utilization for operational decision-making.</p>
+                <h3 class="heading"><a href="https://github.com/KrrishTapwal/Hospital-Emergency-Room-Dashboard-Real-Time-Healthcare-Analytics-in-Excel" target="_blank">🏥 Hospital ER Analytics Dashboard</a></h3>
+                <p>Real-time Excel dashboard tracking ER patient flow, wait times, admission rates, and resource utilization for operational decision-making.</p>
               </div>
             </div>
           </div>
@@ -511,19 +592,19 @@ h1.big.big-2 { color: #ececec !important; }
         <div class="row d-flex justify-content-center">
           <div class="col-md-4 d-flex ftco-animate">
             <div class="blog-entry justify-content-end">
-              <a href="https://github.com/KrrishTapwal/Airlines-Data-Analysis-using-SQL-and-Python" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');"></a>
+              <a href="https://github.com/KrrishTapwal/Airlines-Data-Analysis-using-SQL-and-Python" target="_blank" class="block-20 zoom-effect" style="background-image:url('images/proj_4.jpg');"></a>
               <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="https://github.com/KrrishTapwal/Airlines-Data-Analysis-using-SQL-and-Python" target="_blank">✈️ Airlines Data Analysis — SQL + Python</a></h3>
-                <p>End-to-end airline data analysis uncovering delay patterns, cancellations, and booking trends using SQL for extraction and Python for visualization.</p>
+                <h3 class="heading"><a href="https://github.com/KrrishTapwal/Airlines-Data-Analysis-using-SQL-and-Python" target="_blank">✈️ Airlines Analysis — SQL + Python</a></h3>
+                <p>End-to-end airline data analysis using SQL for extraction and Python for visualization — uncovering delay patterns and booking trends.</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
             <div class="blog-entry justify-content-end">
-              <a href="https://uu2v77l8brgfxhavjp4rvh.streamlit.app/" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');"></a>
+              <a href="https://uu2v77l8brgfxhavjp4rvh.streamlit.app/" target="_blank" class="block-20 zoom-effect" style="background-image:url('images/proj_5.jpg');"></a>
               <div class="text mt-3 float-right d-block">
                 <h3 class="heading"><a href="https://uu2v77l8brgfxhavjp4rvh.streamlit.app/" target="_blank">🤖 AI Support Ticket Classifier</a></h3>
-                <p>NLP-based system using TF-IDF and ML models to automatically classify customer support tickets by issue type and urgency — automating customer service workflows.</p>
+                <p>NLP system using TF-IDF and ML models to classify customer support tickets by type and urgency — automating service workflows.</p>
               </div>
             </div>
           </div>
@@ -531,7 +612,8 @@ h1.big.big-2 { color: #ececec !important; }
       </div>
     </section>
 
-    <!-- COUNTER + CERTIFICATES -->
+
+    <!-- ═══════════════ COUNTER + CERTS ═══════════════ -->
     <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
       <div class="container">
         <div class="row d-md-flex align-items-center">
@@ -561,77 +643,63 @@ h1.big.big-2 { color: #ececec !important; }
           </div>
         </div>
       </div>
-
       <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
         <div class="row justify-content-center">
           <div class="col-md-7 ftco-animate text-center">
-            <h2>CERTIFICATIONS</h2>
-            <div class="heading">
-              <h4>Google Cloud Data Analytics &nbsp;·&nbsp; HackerRank SQL (Intermediate) &nbsp;·&nbsp; Microsoft &nbsp;·&nbsp; ISRO &nbsp;·&nbsp; AICTE</h4>
-              <br>
-              <p><a href="https://postimg.cc/gallery/X5sRSBp" target="_blank" class="btn btn-primary py-3 px-5">View All Certificates</a></p>
-            </div>
+            <h2>Certifications</h2>
+            <h4 style="opacity:0.85; font-weight:400;">Google &nbsp;·&nbsp; Microsoft &nbsp;·&nbsp; HackerRank &nbsp;·&nbsp; ISRO &nbsp;·&nbsp; AICTE &nbsp;·&nbsp; 360DigiTMG</h4>
+            <br>
+            <a href="https://postimg.cc/gallery/X5sRSBp" target="_blank" class="btn btn-primary py-3 px-5">View Gallery</a>
           </div>
         </div>
       </div>
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- ═══════════════ CONTACT ═══════════════ -->
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Get In Touch</h2>
-            <p>Open to full-time MIS / Data Analyst roles, freelance dashboards, and consulting projects.</p>
+            <h2 class="mb-3">Get In Touch</h2>
+            <p style="color:rgba(255,255,255,0.5); font-size:14px;">Open to full-time MIS / Data Analyst roles, freelance dashboards, and consulting projects.</p>
           </div>
         </div>
-
         <div class="row d-flex contact-info mb-5">
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
             <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-map-signs"></span>
-              </div>
-              <h3 class="mb-4">Location</h3>
+              <div class="icon d-flex align-items-center justify-content-center"><span class="icon-map-signs"></span></div>
+              <h3 class="mb-3">Location</h3>
               <p>Chandigarh, India</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
             <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-phone2"></span>
-              </div>
-              <h3 class="mb-4">Phone</h3>
+              <div class="icon d-flex align-items-center justify-content-center"><span class="icon-phone2"></span></div>
+              <h3 class="mb-3">Phone</h3>
               <p><a href="tel:7876742778">+91 7876742778</a></p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
             <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-paper-plane"></span>
-              </div>
-              <h3 class="mb-4">Email</h3>
+              <div class="icon d-flex align-items-center justify-content-center"><span class="icon-paper-plane"></span></div>
+              <h3 class="mb-3">Email</h3>
               <p><a href="mailto:krrishtapwal1212@gmail.com">krrishtapwal1212@gmail.com</a></p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
             <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-globe"></span>
-              </div>
-              <h3 class="mb-4">Resume</h3>
+              <div class="icon d-flex align-items-center justify-content-center"><span class="icon-globe"></span></div>
+              <h3 class="mb-3">Resume</h3>
               <p><a href="https://krizzkamaliya.hackerresume.io/3a6b5802-3f55-4060-bbfd-db5acabf7401" target="_blank">Download CV</a></p>
             </div>
           </div>
         </div>
-
-        <div class="container">
-          <br>
+        <div class="container pb-4">
           <div class="row justify-content-center">
             <div class="col-md-7 ftco-animate text-center">
-              <h2>Have a <span>Question? </span> <a href="https://forms.gle/uLaTShUKXraAvHJ77" target="_blank" class="btn btn-primary py-3 px-5">Click Here</a></h2>
+              <h2>Have a <span>Question?</span> &nbsp;<a href="https://forms.gle/uLaTShUKXraAvHJ77" target="_blank" class="btn btn-primary py-3 px-5">Click Here</a></h2>
             </div>
           </div>
           <br>
@@ -648,22 +716,22 @@ h1.big.big-2 { color: #ececec !important; }
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- ═══════════════ FOOTER ═══════════════ -->
     <footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Krrish Tapwal &nbsp;·&nbsp; MIS Executive & Data Analyst &nbsp;·&nbsp; Chandigarh, India</p>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+              &nbsp;Krrish Tapwal &nbsp;·&nbsp; MIS Executive &amp; Data Analyst &nbsp;·&nbsp; Chandigarh, India</p>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- Loader -->
     <div id="ftco-loader" class="show fullscreen">
       <svg class="circular" width="48px" height="48px">
         <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#e67e22"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#ffbd39"/>
       </svg>
     </div>
 
