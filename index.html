@@ -189,146 +189,221 @@ body { font-family: 'Poppins', sans-serif !important; }
 .box:hover { border-color: rgba(255,189,57,0.3) !important; }
 .box h3 { font-size: 15px !important; font-weight: 700 !important; }
 
-/* ── LANYARD CARD ─────────────────────────────── */
+/* ══ PHYSICAL LANYARD — ID CARD ══════════════════ */
+.slider-item { position: relative; }
+
 .hero-lanyard-container {
   position: absolute;
-  right: 6%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 100;
+  right: 8%;
+  top: 0; bottom: 0;
+  width: 42%;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
+  pointer-events: none;
 }
-.lanyard-wrap {
+
+@keyframes lanyardPendulum {
+  0%, 100% { transform: rotate(-2deg); }
+  50%       { transform: rotate(2deg); }
+}
+
+.lanyard-assembly {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform-origin: top center;
+  animation: lanyardPendulum 6s ease-in-out infinite;
+  pointer-events: all;
   perspective: 1200px;
 }
-.lanyard-string {
-  width: 3px;
-  height: 70px;
-  background: linear-gradient(180deg, transparent 0%, #ffbd39 50%, #ffbd39 100%);
+
+/* top ring that hangs from ceiling */
+.l-mount {
+  width: 24px; height: 10px;
+  background: linear-gradient(180deg, #444, #2a2a2a);
+  border-radius: 5px 5px 2px 2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
   position: relative;
 }
-.lanyard-string::before {
+.l-mount::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 50%;
+  top: -9px; left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #ffbd39, transparent);
+  width: 13px; height: 13px;
+  border: 2.5px solid #555;
+  border-radius: 50%;
 }
-.lanyard-card {
-  width: 230px;
-  height: 330px;
+
+/* strap body */
+.l-strap {
+  width: 16px; height: 95px;
+  background: linear-gradient(90deg, #0e0e0e 0%, #1e1e1e 25%, #2a2a2a 50%, #1e1e1e 75%, #0e0e0e 100%);
+  border-radius: 1px;
+  position: relative;
+}
+
+/* silver rivets/clips on strap */
+.l-rivet {
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  width: 20px; height: 10px;
+  background: linear-gradient(135deg, #bbb 0%, #eee 40%, #aaa 60%, #777 100%);
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.4);
+}
+.l-rivet.r1 { top: 18px; }
+.l-rivet.r2 { top: 60px; }
+
+/* metal hook/clip at bottom of strap */
+.l-hook {
+  width: 14px; height: 20px;
+  background: linear-gradient(180deg, #888, #555, #3a3a3a);
+  border-radius: 2px 2px 5px 5px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.55);
+  position: relative;
+}
+.l-hook::after {
+  content: '';
+  position: absolute;
+  bottom: -9px; left: 50%;
+  transform: translateX(-50%);
+  width: 11px; height: 11px;
+  border: 2.5px solid #555;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+}
+
+/* gap between hook and card */
+.l-gap { height: 16px; }
+
+/* ── THE CARD ── */
+.l-card {
+  width: 205px; height: 285px;
   transform-style: preserve-3d;
   cursor: pointer;
+  transition: transform 0.75s cubic-bezier(.4,0,.2,1);
   position: relative;
-  transition: transform 0.7s cubic-bezier(.4,0,.2,1);
 }
-.lanyard-card.flipped { transform: rotateY(180deg); }
-.card-face {
+.l-card.flipped { transform: rotateY(180deg); }
+
+.l-face {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  width: 230px;
-  height: 330px;
-  border-radius: 16px;
+  top: 0; left: 0;
+  width: 205px; height: 285px;
+  border-radius: 14px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.1);
 }
-.card-front { transform: rotateY(0deg);   background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%); }
-.card-back  { transform: rotateY(180deg); background: linear-gradient(160deg, #16213e 0%, #0f3460 100%); }
-.card-stripe {
+
+/* FRONT: white card like reference */
+.l-front {
+  transform: rotateY(0deg);
+  background: #f2f1ea;
+  box-shadow: 0 28px 65px rgba(0,0,0,0.7), 0 4px 12px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+}
+.l-top-stripe {
+  height: 7px; flex-shrink: 0;
+  background: linear-gradient(90deg, #ffbd39, #f39c12, #ffbd39);
+}
+.l-hole-front {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 13px; left: 50%;
+  transform: translateX(-50%);
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.12);
+  border: 1.5px solid rgba(0,0,0,0.2);
+  z-index: 2;
+}
+.l-photo-wrap { flex-shrink: 0; height: 145px; overflow: hidden; }
+.l-photo {
+  width: 205px !important; height: 145px !important;
+  object-fit: cover !important; object-position: center 10% !important;
+  display: block !important; max-width: none !important;
+  border-radius: 0 !important; border: none !important; margin: 0 !important;
+}
+.l-info { padding: 10px 14px 8px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.l-org {
+  font-size: 8px !important; font-weight: 700 !important; color: #ffbd39 !important;
+  text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px !important;
+}
+.l-name-text {
+  font-size: 16px !important; font-weight: 800 !important;
+  color: #1a1a1a !important; margin: 0 0 2px !important; line-height: 1.2 !important;
+}
+.l-role-text {
+  font-size: 9.5px !important; color: #555 !important;
+  font-weight: 500 !important; margin: 0 0 8px !important; line-height: 1.4 !important;
+}
+.l-divider { width: 100%; height: 1px; background: rgba(0,0,0,0.1); margin-bottom: 6px; }
+.l-loc-text {
+  font-size: 8.5px !important; color: #888 !important; margin: 0 !important;
+}
+
+/* BACK: dark card */
+.l-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(160deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  box-shadow: 0 28px 65px rgba(0,0,0,0.7);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 30px 18px 44px;
+  text-align: center;
+  position: relative;
+}
+.l-back-stripe {
+  position: absolute; top: 0; left: 0; right: 0;
   height: 7px;
   background: linear-gradient(90deg, #ffbd39, #f39c12, #ffbd39);
 }
-.card-hole {
-  position: absolute;
-  top: 18px;
-  left: 50%;
+.l-hole-back {
+  position: absolute; top: 13px; left: 50%;
   transform: translateX(-50%);
-  width: 20px; height: 20px;
+  width: 13px; height: 13px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.4);
-  border: 2px solid rgba(255,255,255,0.25);
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.2);
 }
-/* FRONT face */
-.card-photo {
-  width: 100px !important;
-  height: 100px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
+.l-back-photo {
+  width: 70px !important; height: 70px !important;
+  border-radius: 50% !important; object-fit: cover !important;
   object-position: center top !important;
-  border: 3px solid #ffbd39 !important;
-  display: block !important;
-  margin: 50px auto 10px !important;
-  box-shadow: 0 6px 20px rgba(255,189,57,0.4) !important;
-  max-width: none !important;
+  border: 2.5px solid rgba(255,189,57,0.5) !important;
+  display: block !important; margin: 0 auto 10px !important; max-width: none !important;
 }
-.card-info { text-align: center; padding: 0 14px; }
-.card-name  { font-size: 15px !important; font-weight: 700 !important; color: #fff !important; margin: 0 0 4px !important; }
-.card-role  { font-size: 10px !important; color: #ffbd39 !important; font-weight: 600 !important; letter-spacing: 0.5px; margin: 0 0 5px !important; line-height: 1.4; }
-.card-loc   { font-size: 11px !important; color: rgba(255,255,255,0.45) !important; margin: 0 !important; }
-.card-footer-bar {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(255,189,57,0.12);
-  border-top: 1px solid rgba(255,189,57,0.25);
-  padding: 9px;
-  text-align: center;
-  font-size: 9px !important;
-  color: rgba(255,255,255,0.45) !important;
-  letter-spacing: 0.3px;
+.l-back-name {
+  font-size: 15px !important; font-weight: 700 !important;
+  color: #fff !important; margin: 0 0 10px !important;
 }
-/* BACK face */
-.card-back-inner { padding: 50px 14px 44px; text-align: center; }
-.card-photo-back {
-  width: 72px !important;
-  height: 72px !important;
-  border-radius: 10px !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  border: 2px solid rgba(255,189,57,0.45) !important;
-  display: block !important;
-  margin: 0 auto 10px !important;
-  max-width: none !important;
+.l-back-detail {
+  font-size: 10px !important; color: rgba(255,255,255,0.65) !important;
+  margin: 5px 0 !important; line-height: 1.5 !important; text-align: left; width: 100%;
 }
-.card-back-inner .card-name { font-size: 14px !important; font-weight: 700 !important; color: #fff !important; margin-bottom: 10px !important; }
-.card-back-details p {
-  font-size: 10.5px !important;
-  color: rgba(255,255,255,0.65) !important;
-  margin: 6px 0 !important;
-  text-align: left;
-  line-height: 1.5;
+.l-socials { display: flex; gap: 8px; margin-top: 14px; }
+.l-socials a {
+  font-size: 10px !important; font-weight: 700 !important;
+  color: #ffbd39 !important; background: rgba(255,189,57,0.12);
+  border: 1px solid rgba(255,189,57,0.35); border-radius: 20px;
+  padding: 4px 12px; text-decoration: none !important;
 }
-.card-socials { display: flex; justify-content: center; gap: 10px; margin-top: 14px; }
-.card-socials a {
-  font-size: 10px !important;
-  font-weight: 700 !important;
-  color: #ffbd39 !important;
-  background: rgba(255,189,57,0.12);
-  border: 1px solid rgba(255,189,57,0.35);
-  border-radius: 20px;
-  padding: 4px 13px;
-  text-decoration: none !important;
+.l-socials a:hover { background: rgba(255,189,57,0.25); }
+.l-back-footer {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(255,189,57,0.1); border-top: 1px solid rgba(255,189,57,0.2);
+  padding: 7px; text-align: center;
+  font-size: 9px !important; color: rgba(255,255,255,0.4) !important;
 }
-.card-socials a:hover { background: rgba(255,189,57,0.25); }
-.lanyard-hint {
-  font-size: 11px;
-  color: rgba(255,255,255,0.35);
-  margin-top: 14px;
-  letter-spacing: 0.5px;
-  text-align: center;
+
+.l-hint {
+  font-size: 11px; color: rgba(255,255,255,0.3);
+  margin-top: 12px; letter-spacing: 0.3px; text-align: center;
 }
+
 @media (max-width: 991px) {
   .hero-lanyard-container { display: none; }
 }
@@ -384,10 +459,8 @@ body { font-family: 'Poppins', sans-serif !important; }
           <div class="overlay"></div>
           <div class="container">
             <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-              <!-- RIGHT: Chicago photo as hero background -->
-              <div class="one-third js-fullheight order-md-last" style="background-image: url('images/krrish-card.png'); background-size: cover; background-position: center top;">
-                <div class="overlay"></div>
-              </div>
+              <!-- RIGHT: empty — lanyard floats here as absolute overlay -->
+              <div class="one-third js-fullheight order-md-last" style="background: transparent;"></div>
               <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
                 <div class="text">
                   <span class="subheading">Hello, I'm</span>
@@ -424,45 +497,52 @@ body { font-family: 'Poppins', sans-serif !important; }
             </div>
           </div>
         </div>
-        <!-- LANYARD CARD: floating over hero, right side -->
+        <!-- PHYSICAL LANYARD: floating overlay, right side of hero -->
         <div class="hero-lanyard-container">
-          <div class="lanyard-wrap">
-            <div class="lanyard-string"></div>
-            <div class="lanyard-card" id="lanyardCard" onclick="this.classList.toggle('flipped')" title="Click to flip">
-              <!-- FRONT -->
-              <div class="card-face card-front">
-                <div class="card-stripe"></div>
-                <div class="card-hole"></div>
-                <img src="images/krrish-card.png" alt="Krrish Tapwal" class="card-photo">
-                <div class="card-info">
-                  <p class="card-name">Krrish Tapwal</p>
-                  <p class="card-role">MIS Executive &amp; Data Analyst</p>
-                  <p class="card-loc">📍 Chandigarh, India</p>
+          <div class="lanyard-assembly">
+            <!-- Strap system -->
+            <div class="l-mount"></div>
+            <div class="l-strap">
+              <div class="l-rivet r1"></div>
+              <div class="l-rivet r2"></div>
+            </div>
+            <div class="l-hook"></div>
+            <div class="l-gap"></div>
+            <!-- Flip card -->
+            <div class="l-card" id="lanyardCard" onclick="this.classList.toggle('flipped')" title="Click to flip">
+              <!-- FRONT: white ID card -->
+              <div class="l-face l-front">
+                <div class="l-hole-front"></div>
+                <div class="l-top-stripe"></div>
+                <div class="l-photo-wrap">
+                  <img src="images/krrish-card.png" alt="Krrish Tapwal" class="l-photo">
                 </div>
-                <div class="card-footer-bar"><span>krrishtapwal1212@gmail.com</span></div>
+                <div class="l-info">
+                  <div class="l-org">Portfolio · 2025</div>
+                  <div class="l-name-text">Krrish Tapwal</div>
+                  <div class="l-role-text">MIS Executive &amp; Data Analyst</div>
+                  <div class="l-divider"></div>
+                  <div class="l-loc-text">📍 Chandigarh, India</div>
+                </div>
               </div>
-              <!-- BACK -->
-              <div class="card-face card-back">
-                <div class="card-stripe"></div>
-                <div class="card-hole"></div>
-                <div class="card-back-inner">
-                  <img src="images/krrish-card.png" alt="Krrish Tapwal" class="card-photo-back">
-                  <p class="card-name">Krrish Tapwal</p>
-                  <div class="card-back-details">
-                    <p>🎓 B.E. CSE — Chitkara University</p>
-                    <p>📊 Excel · Power BI · SQL · Python</p>
-                    <p>🏢 Red Bean Hospitality</p>
-                    <p>📍 MIS &amp; Data Analytics</p>
-                  </div>
-                  <div class="card-socials">
-                    <a href="https://www.linkedin.com/in/krrish-tapwal/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/KrrishTapwal" target="_blank">GitHub</a>
-                  </div>
+              <!-- BACK: dark card -->
+              <div class="l-face l-back">
+                <div class="l-back-stripe"></div>
+                <div class="l-hole-back"></div>
+                <img src="images/krrish-card.png" alt="Krrish Tapwal" class="l-back-photo">
+                <div class="l-back-name">Krrish Tapwal</div>
+                <div class="l-back-detail">🎓 B.E. CSE — Chitkara University</div>
+                <div class="l-back-detail">📊 Excel · Power BI · SQL · Python</div>
+                <div class="l-back-detail">🏢 Red Bean Hospitality</div>
+                <div class="l-back-detail">📍 MIS &amp; Data Analytics</div>
+                <div class="l-socials">
+                  <a href="https://www.linkedin.com/in/krrish-tapwal/" target="_blank">LinkedIn</a>
+                  <a href="https://github.com/KrrishTapwal" target="_blank">GitHub</a>
                 </div>
-                <div class="card-footer-bar"><span>Click to flip back</span></div>
+                <div class="l-back-footer">Click to flip back</div>
               </div>
             </div>
-            <p class="lanyard-hint">👆 Click card to flip</p>
+            <div class="l-hint">👆 Click card to flip</div>
           </div>
         </div>
       </div>
