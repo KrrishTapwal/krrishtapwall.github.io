@@ -190,18 +190,21 @@ body { font-family: 'Poppins', sans-serif !important; }
 .box h3 { font-size: 15px !important; font-weight: 700 !important; }
 
 /* ══ PHYSICAL LANYARD — ID CARD ══════════════════ */
-.slider-item { position: relative; }
+/* Override template z-index:-1 on .one-third so lanyard is visible */
+.owl-carousel.home-slider .slider-item .slider-text .one-third {
+  z-index: 100 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+}
 
 .hero-lanyard-container {
-  position: absolute;
-  right: 8%;
-  top: 0; bottom: 0;
-  width: 42%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes lanyardPendulum {
@@ -459,8 +462,52 @@ body { font-family: 'Poppins', sans-serif !important; }
           <div class="overlay"></div>
           <div class="container">
             <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-              <!-- RIGHT: empty — lanyard floats here as absolute overlay -->
-              <div class="one-third js-fullheight order-md-last" style="background: transparent;"></div>
+              <!-- RIGHT: lanyard card inside one-third (z-index overridden to 100) -->
+              <div class="one-third js-fullheight order-md-last" style="background: transparent;">
+                <div class="hero-lanyard-container">
+                  <div class="lanyard-assembly">
+                    <div class="l-mount"></div>
+                    <div class="l-strap">
+                      <div class="l-rivet r1"></div>
+                      <div class="l-rivet r2"></div>
+                    </div>
+                    <div class="l-hook"></div>
+                    <div class="l-gap"></div>
+                    <div class="l-card" id="lanyardCard" onclick="this.classList.toggle('flipped')" title="Click to flip">
+                      <div class="l-face l-front">
+                        <div class="l-hole-front"></div>
+                        <div class="l-top-stripe"></div>
+                        <div class="l-photo-wrap">
+                          <img src="images/krrish-card.png" alt="Krrish Tapwal" class="l-photo">
+                        </div>
+                        <div class="l-info">
+                          <div class="l-org">Portfolio · 2025</div>
+                          <div class="l-name-text">Krrish Tapwal</div>
+                          <div class="l-role-text">MIS Executive &amp; Data Analyst</div>
+                          <div class="l-divider"></div>
+                          <div class="l-loc-text">📍 Chandigarh, India</div>
+                        </div>
+                      </div>
+                      <div class="l-face l-back">
+                        <div class="l-back-stripe"></div>
+                        <div class="l-hole-back"></div>
+                        <img src="images/krrish-card.png" alt="Krrish Tapwal" class="l-back-photo">
+                        <div class="l-back-name">Krrish Tapwal</div>
+                        <div class="l-back-detail">🎓 B.E. CSE — Chitkara University</div>
+                        <div class="l-back-detail">📊 Excel · Power BI · SQL · Python</div>
+                        <div class="l-back-detail">🏢 Red Bean Hospitality</div>
+                        <div class="l-back-detail">📍 MIS &amp; Data Analytics</div>
+                        <div class="l-socials">
+                          <a href="https://www.linkedin.com/in/krrish-tapwal/" target="_blank">LinkedIn</a>
+                          <a href="https://github.com/KrrishTapwal" target="_blank">GitHub</a>
+                        </div>
+                        <div class="l-back-footer">Click to flip back</div>
+                      </div>
+                    </div>
+                    <div class="l-hint">👆 Click card to flip</div>
+                  </div>
+                </div>
+              </div>
               <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
                 <div class="text">
                   <span class="subheading">Hello, I'm</span>
@@ -495,54 +542,6 @@ body { font-family: 'Poppins', sans-serif !important; }
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- PHYSICAL LANYARD: floating overlay, right side of hero -->
-        <div class="hero-lanyard-container">
-          <div class="lanyard-assembly">
-            <!-- Strap system -->
-            <div class="l-mount"></div>
-            <div class="l-strap">
-              <div class="l-rivet r1"></div>
-              <div class="l-rivet r2"></div>
-            </div>
-            <div class="l-hook"></div>
-            <div class="l-gap"></div>
-            <!-- Flip card -->
-            <div class="l-card" id="lanyardCard" onclick="this.classList.toggle('flipped')" title="Click to flip">
-              <!-- FRONT: white ID card -->
-              <div class="l-face l-front">
-                <div class="l-hole-front"></div>
-                <div class="l-top-stripe"></div>
-                <div class="l-photo-wrap">
-                  <img src="images/krrish-card.png" alt="Krrish Tapwal" class="l-photo">
-                </div>
-                <div class="l-info">
-                  <div class="l-org">Portfolio · 2025</div>
-                  <div class="l-name-text">Krrish Tapwal</div>
-                  <div class="l-role-text">MIS Executive &amp; Data Analyst</div>
-                  <div class="l-divider"></div>
-                  <div class="l-loc-text">📍 Chandigarh, India</div>
-                </div>
-              </div>
-              <!-- BACK: dark card -->
-              <div class="l-face l-back">
-                <div class="l-back-stripe"></div>
-                <div class="l-hole-back"></div>
-                <img src="images/krrish-card.png" alt="Krrish Tapwal" class="l-back-photo">
-                <div class="l-back-name">Krrish Tapwal</div>
-                <div class="l-back-detail">🎓 B.E. CSE — Chitkara University</div>
-                <div class="l-back-detail">📊 Excel · Power BI · SQL · Python</div>
-                <div class="l-back-detail">🏢 Red Bean Hospitality</div>
-                <div class="l-back-detail">📍 MIS &amp; Data Analytics</div>
-                <div class="l-socials">
-                  <a href="https://www.linkedin.com/in/krrish-tapwal/" target="_blank">LinkedIn</a>
-                  <a href="https://github.com/KrrishTapwal" target="_blank">GitHub</a>
-                </div>
-                <div class="l-back-footer">Click to flip back</div>
-              </div>
-            </div>
-            <div class="l-hint">👆 Click card to flip</div>
           </div>
         </div>
       </div>
